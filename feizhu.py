@@ -131,8 +131,7 @@ class XiechengDriverService(object):
     def crawllianjie(self, page_sourse):
         #print page_sourse
         response = HtmlResponse(url="my HTML string", body=page_sourse, encoding="utf-8")
-        #/html/body/div[3]/div[1]/ul/li[4]/a/text()
-        #//*[@id="page-description-content"]/div[2]/div[2]/ul[1]/li[1]
+        
         #jingqu = response.xpath('//div[@class="content cf"]/div[@class="dest_toptitle detail_tt"]/div[@class="cf"]/div[@class="f_left"]/h1/a/text()').extract()[0]
         jingqu = response.xpath('//*[@id="page-description-content"]/div[2]/div[2]/ul[1]/li[1]/text()').extract()[0]
         jingqu = jingqu.split(':')[1].strip()
