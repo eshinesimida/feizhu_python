@@ -58,7 +58,8 @@ class XiechengDriverService(object):
         loopNum = 0
 
         ifHandle = False
-       
+        # #//*[@id="content"]/div[3]/div[2]/div[5]/p/a
+        # #//*[@id="content"]/div[3]/div[2]/div[5]/p/a
         self.driver.find_element_by_xpath('//*[@id="itemDescTab"]/div/div/ul/li[2]').click()
         time.sleep(random.uniform(3, 6))
 
