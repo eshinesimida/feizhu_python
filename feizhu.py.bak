@@ -37,7 +37,7 @@ class XiechengDriverService(object):
             self.driver.maximize_window()
             self.driver.implicitly_wait(30)
 
-            time.sleep(5)
+            time.sleep(3)
             target = self.driver.find_element_by_class_name(
                'item-desc-tabview')
             
