@@ -29,15 +29,13 @@ class XiechengDriverService(object):
             # 将界面最大化
             self.driver.maximize_window()
             self.driver.implicitly_wait(30)
-
+			#定位到评论区
             time.sleep(5)
             target = self.driver.find_element_by_class_name(
                'item-desc-tabview')
-            
             y = target.location['y']
-            print y
+            #print y
             y = y - 100
-
             js = "var q=document.documentElement.scrollTop=" + str(y)
             self.driver.execute_script(js)
             self.crawlxiecheng()
@@ -45,13 +43,9 @@ class XiechengDriverService(object):
     def crawlxiecheng(self):
         # 单页循环次数
         loopNum = 0
-
-        ifHandle = False
-       
+        ifHandle = False       
         self.driver.find_element_by_xpath('//*[@id="itemDescTab"]/div/div/ul/li[2]').click()
         time.sleep(random.uniform(3, 6))
-
-        
         self.driver.find_element_by_xpath('//*[@id="J_Comments"]/div[3]/div[1]/div[1]/div[1]').click()
         time.sleep(random.uniform(3, 6))
         #time.sleep(3)

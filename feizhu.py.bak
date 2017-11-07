@@ -12,13 +12,10 @@ from mysql import xiechengDAO
 
 class XiechengDriverService(object):
     def __init__(self):
-        self.driver = webdriver.Chrome()
-        
+        self.driver = webdriver.Chrome()        
         self.xiechengDao = xiechengDAO()
         # 存放列表页数据
         self.listPageInfo = []
-
-
         self.commList = []
         #self.urls=['http://you.ctrip.com/sight/beijing1/234.html','http://you.ctrip.com/sight/beijing1/229.html','http://you.ctrip.com/sight/beijing1/231.html','http://you.ctrip.com/sight/yanqing770/230.html','http://you.ctrip.com/sight/beijing1/5174.html','http://you.ctrip.com/sight/beijing1/233.html','http://you.ctrip.com/sight/huairou120418/243.html']
         self.urls=['https://traveldetail.fliggy.com/item.htm?id=534280065174&spm=181.7395991.1998089960.3.43a81a35jff9Ir&expiredate=',
@@ -45,10 +42,6 @@ class XiechengDriverService(object):
             self.driver.execute_script(js)
             self.crawlxiecheng()
 
-
-
-
-
     def crawlxiecheng(self):
         # 单页循环次数
         loopNum = 0
@@ -58,7 +51,7 @@ class XiechengDriverService(object):
         self.driver.find_element_by_xpath('//*[@id="itemDescTab"]/div/div/ul/li[2]').click()
         time.sleep(random.uniform(3, 6))
 
-        #///*[@id="J_Comments"]/div[3]/div[1]/div[1]/div[1]
+        
         self.driver.find_element_by_xpath('//*[@id="J_Comments"]/div[3]/div[1]/div[1]/div[1]').click()
         time.sleep(random.uniform(3, 6))
         #time.sleep(3)
