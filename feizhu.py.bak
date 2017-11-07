@@ -13,7 +13,7 @@ from mysql import xiechengDAO
 class XiechengDriverService(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
-        
+        #self.driver = webdriver.PhantomJS()
         self.xiechengDao = xiechengDAO()
         # 存放列表页数据
         self.listPageInfo = []
@@ -25,7 +25,11 @@ class XiechengDriverService(object):
 'https://traveldetail.fliggy.com/item.htm?id=542638396605&spm=181.7395991.1998089960.6.43a81a35jff9Ir&expiredate=','https://traveldetail.fliggy.com/item.htm?id=546390469812&spm=181.7395991.1998089960.3.515bb0e6n1wuk5&expiredate=','https://traveldetail.fliggy.com/item.htm?id=538415550443&spm=181.7395991.1998089960.3.1c80ae37id8Mgq&expiredate=','https://traveldetail.fliggy.com/item.htm?id=554960016772&spm=181.7395991.1998089960.6.1c80ae37id8Mgq&expiredate=','https://traveldetail.fliggy.com/item.htm?id=521492240665&spm=181.7395991.1998089960.3.bb2d947PMob1X&expiredate=','https://traveldetail.fliggy.com/item.htm?id=37740444857&spm=181.7395991.1998089960.3.586436cdhpjCrB&expiredate=','https://traveldetail.fliggy.com/item.htm?id=530264750268&spm=181.7395991.1998089960.3.1f6f6c659pJdj0&expiredate=','https://traveldetail.fliggy.com/item.htm?id=530264750268&spm=181.7395991.1998089960.3.1f6f6c659pJdj0&expiredate=',
 'https://traveldetail.fliggy.com/item.htm?id=544592246299&spm=181.7395991.1998089960.3.4957a610BevIQC&expiredate=','https://traveldetail.fliggy.com/item.htm?id=24965168454&spm=181.7395991.1998089960.6.4957a610BevIQC&expiredate=','https://traveldetail.fliggy.com/item.htm?id=538006872633&spm=181.7395991.1998089960.3.30aed337auuGBP&expiredate=&smToken=e689ca188b6f40abbce5aace6ab6e003&smSign=E%2FqgVrf2qmFXkq0atvSSnw%3D%3D','https://traveldetail.fliggy.com/item.htm?id=537959328015&spm=181.7395991.1998089960.6.30aed337auuGBP&expiredate=','https://traveldetail.fliggy.com/item.htm?id=37035712707&spm=181.7395991.1998089960.3.410795d7jYvqEI&expiredate=',
 'https://traveldetail.fliggy.com/item.htm?id=521097833745&spm=181.7395991.1998089960.6.5c60df77FqJQpP&expiredate=','https://traveldetail.fliggy.com/item.htm?id=37380297030&spm=181.7395991.1998089960.37.5c60df77FqJQpP&expiredate=','https://traveldetail.fliggy.com/item.htm?id=536597069124&spm=181.7395991.1998089960.9.67c513bas2JD2K&expiredate=','https://traveldetail.fliggy.com/item.htm?id=38495865641&spm=181.7395991.1998089960.36.67c513bas2JD2K&expiredate=','https://traveldetail.fliggy.com/item.htm?id=520185293565&spm=181.7395991.1998089960.3.11f45503huWjl3&expiredate=&smToken=2169be71573145feb3c890850858eae3&smSign=EFNkLG3P478uKluI9BXBdQ%3D%3D','https://traveldetail.fliggy.com/item.htm?id=535487371599&spm=181.7395991.1998089960.3.57cee06a3oEDpo&expiredate=','https://traveldetail.fliggy.com/item.htm?id=536338726405&spm=181.7395991.1998089960.3.3157e3a9rL8xeu&expiredate='
-]
+
+
+
+
+                  ]
     def start(self):
         for url1 in self.urls:
             self.driver.get(url1)
